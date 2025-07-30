@@ -1,0 +1,222 @@
+/* ESRI Map Widget Styles - Must be first */
+@import "https://js.arcgis.com/4.33/@arcgis/core/assets/esri/themes/light/main.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-50: hsl(210, 100%, 97%);
+  --navy-100: hsl(210, 100%, 90%);
+  --navy-600: hsl(221, 68%, 44%);
+  --navy-700: hsl(221, 68%, 38%);
+  --navy-800: hsl(221, 68%, 32%);
+  --forest-50: hsl(142, 76%, 96%);
+  --forest-100: hsl(142, 76%, 88%);
+  --forest-600: hsl(142, 76%, 36%);
+  --forest-700: hsl(142, 76%, 30%);
+  --olive-green: #2E6F40;
+  --pdf-red: #9F1717;
+  --royal-blue: #2D68C4;
+  
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(221, 68%, 44%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(221, 68%, 44%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-gray-50 text-foreground;
+  }
+}
+
+/* ESRI Map Custom Styles */
+.esri-map-widget {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.esri-view .esri-view-surface--inset-outline:focus::after {
+  outline: 2px solid var(--royal-blue);
+}
+
+.esri-popup__main-container {
+  font-family: inherit;
+}
+
+.esri-popup__header-title {
+  color: var(--royal-blue);
+  font-weight: 600;
+}
+
+.esri-zoom .esri-widget--button {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.esri-zoom .esri-widget--button:hover {
+  background-color: var(--royal-blue);
+  color: white;
+}
+
+/* Custom navy and forest green theme classes */
+.bg-navy-600 {
+  background-color: var(--navy-600);
+}
+
+.bg-navy-700 {
+  background-color: var(--navy-700);
+}
+
+.bg-navy-800 {
+  background-color: var(--navy-800);
+}
+
+.text-navy-600 {
+  color: var(--navy-600);
+}
+
+.text-navy-700 {
+  color: var(--navy-700);
+}
+
+.text-navy-800 {
+  color: var(--navy-800);
+}
+
+.bg-forest-600 {
+  background-color: var(--forest-600);
+}
+
+.bg-forest-700 {
+  background-color: var(--forest-700);
+}
+
+.bg-forest-100 {
+  background-color: var(--forest-100);
+}
+
+.text-forest-600 {
+  color: var(--forest-600);
+}
+
+.text-forest-700 {
+  color: var(--forest-700);
+}
+
+.text-forest-800 {
+  color: var(--forest-700);
+}
+
+.hover\:bg-navy-700:hover {
+  background-color: var(--navy-700);
+}
+
+.hover\:bg-forest-700:hover {
+  background-color: var(--forest-700);
+}
+
+.focus\:ring-navy-500:focus {
+  --tw-ring-color: var(--navy-600);
+}
+
+.focus\:border-navy-500:focus {
+  --tw-border-opacity: 1;
+  border-color: var(--navy-600);
+}
+
+.focus\:ring-forest-500:focus {
+  --tw-ring-color: var(--forest-600);
+}
+
+.bg-royal-blue {
+  background-color: var(--royal-blue);
+}
+
+.bg-pdf-red {
+  background-color: var(--pdf-red);
+}
+
+.hover\:bg-pdf-red:hover {
+  background-color: var(--pdf-red);
+  filter: brightness(0.9);
+}
+
+.bg-olive-green {
+  background-color: var(--olive-green);
+}
+
+.hover\:bg-olive-green:hover {
+  background-color: var(--olive-green);
+  filter: brightness(0.9);
+}
+
+.text-status-enabled {
+  color: #16a34a;
+}
+
+.text-status-disabled {
+  color: #6b7280;
+}
+
+/* Switch component styling overrides */
+.switch-enabled[data-state="checked"] {
+  background-color: #16a34a !important;
+}
+
+.switch-enabled[data-state="checked"] .switch-thumb {
+  background-color: white !important;
+}
+
+/* Additional styling for radix switch */
+[data-state="checked"].switch-enabled {
+  background-color: #16a34a !important;
+}
+
+.text-status-enabled-navy {
+  color: var(--navy-600);
+}
